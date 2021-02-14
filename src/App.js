@@ -13,7 +13,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      Hello this is Production Ready Deploy Application for {velocity && velocity.name}
+      Hello this is Production Ready Deploy Application for {velocity && velocity.name} via App Buddy works
     </div>
   );
 }
