@@ -1,9 +1,19 @@
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { get } from "./api";
+import "./App.css";
 
 function App() {
+  const [velocity, setVelocity] = useState();
+
+  useEffect(() => {
+    get().then((response) => {
+      console.log(response.data.velocity.name);
+      setVelocity(response.data.velocity);
+    });
+  }, []);
   return (
     <div className="App">
-      Production Ready Deploy Application
+      Production Ready Deploy Application for {velocity && velocity.name}
     </div>
   );
 }
